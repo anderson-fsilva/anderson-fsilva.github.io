@@ -1,10 +1,11 @@
 .page-header {
+    padding: 3rem 4rem;
     color: #fff;
     text-align: center;
     background-color: #00a8f3;
     background-image: linear-gradient(120deg, #155799, #00a8f3);
     width: 100%;
-    margin-top: 0%;
+    
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
@@ -24,7 +25,7 @@ body {
 
 
 .project-name {
-    font-size: 1.75rem;
+    font-size: 3rem;
 }
 
 .project-tagline {
@@ -35,10 +36,9 @@ body {
 }
 
 .btn {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
+    padding: 0.6rem 0.9rem;
     font-size: 0.9rem;
+    display: inline-block;
     margin-bottom: 1rem;
     color: rgba(255,255,255,0.7);
     background-color: rgba(255,255,255,0.08);
@@ -50,14 +50,25 @@ body {
 }
 
 .main-content {
-    padding: 2rem 1rem;
-    font-size: 1rem;
+    padding: 2rem 6rem;
+    font-size: 1.1rem;
     word-wrap: break-word;
+    min-width: 64em;
 }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
     margin-top: 2rem;
     margin-bottom: 1rem;
     color: #00a8f3;
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
     font-weight: bold;
 }
