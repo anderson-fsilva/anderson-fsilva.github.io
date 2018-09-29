@@ -1,13 +1,10 @@
-@(clienteForm: Form[Cliente])
+@(usuarioForm: Form[Usuario])
 
 @main("Cadastro | Conforta-me") {
   <h1>Cadastro</h1>
-  @helper.form(action = helper.CSRF(routes.CadastroController.save())) {
+
 		<fieldset>
-		<legend>Cliente @clienteForm("nome").valueOr("(Novo Cliente)")</legend>
-	  	@helper.inputText(clienteForm("Nome"))
+		<legend>Usuario @usuarioForm("nome").valueOr("(Novo Usuario)")</legend>
 		</fieldset>
 		<input type="Submit" class="btn primary">
-	}
-
 }

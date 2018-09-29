@@ -12,14 +12,14 @@ GET     /cadastro                   controllers.CadastroController.index()
 POST    /cadastro                   controllers.CadastroController.save()
 GET     /guiarapido                 controllers.GuiaRapidoController.index()
 POST    /guiarapido                 controllers.GuiaRapidoController.onPost()
-
+GET     /infopacote                 controllers.GuiaRapidoController.obterInfoPacote(nome_pacote: String)
 
 
 
 
 # Links abaixo não são do Conforta-me
 
-GET     /products                   controllers.ProductsController.list
-GET     /products/new               controllers.ProductsController.showBlank()
-GET     /products/:id               controllers.ProductsController.show(id: Integer)
-POST    /products                   controllers.ProductsController.save()
+#GET     /products                   controllers.ProductsController.list
+#GET     /products/new               controllers.ProductsController.showBlank()
+#GET     /products/:id               controllers.ProductsController.show(id: Integer)
+#POST    /products                   controllers.ProductsController.save()

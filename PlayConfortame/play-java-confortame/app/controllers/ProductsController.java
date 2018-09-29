@@ -18,10 +18,10 @@ public class ProductsController extends Controller {
 		products = new Product();
     }
 
-    public Result list() {
+    /*public Result list() {
 		Set<Product> setOfProducts = products.findAll();
 		return ok(list.render(setOfProducts));
-    }
+	}*/
 
 	public Result showBlank() {
 		Form<Product> productForm = formFactory.form(Product.class);
