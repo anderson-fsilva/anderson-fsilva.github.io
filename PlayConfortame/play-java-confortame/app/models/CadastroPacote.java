@@ -32,8 +32,12 @@ public class CadastroPacote {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+    //retorna pacote selecionado pelo nome
+>>>>>>> a31ad70f6e1cc6029a895cbc1d4bc92515d0f57a
 =======
     //retorna pacote selecionado pelo nome
 >>>>>>> a31ad70f6e1cc6029a895cbc1d4bc92515d0f57a
