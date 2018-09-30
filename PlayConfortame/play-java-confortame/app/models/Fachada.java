@@ -25,4 +25,14 @@ public class Fachada {
     }
 
 
+    public String exibirDetalhesPacote(String nomePacote) {
+        Pacote pacoteDetalhes = this.controlaContratacao.obterDetalhesPacote(nomePacote);
+        String pacoteDt = "Pacote " + nomePacote + '\n' + 
+                            "Buffet: " + String.valueOf(pacoteDetalhes.buffet) + '\n' +
+                            "Urnas: " + pacoteDetalhes.urnas + '\n' +
+                            "Valor medio do pacote: " + pacoteDetalhes.valorPacote + '\n';
+        return pacoteDt;
+    }
+
+
 }

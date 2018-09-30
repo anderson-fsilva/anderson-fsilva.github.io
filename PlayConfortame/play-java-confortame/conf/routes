@@ -12,9 +12,10 @@ GET     /cadastro                   controllers.CadastroController.index()
 POST    /cadastro                   controllers.CadastroController.save()
 GET     /guiarapido                 controllers.GuiaRapidoController.index()
 POST    /guiarapido                 controllers.GuiaRapidoController.onPost()
-GET     /infopacote                 controllers.GuiaRapidoController.obterInfoPacote(nome_pacote: String)
-
-
+GET     /customizarpedido           controllers.GuiaRapidoController.indexCustomizar(nome_pacote: String)
+POST    /customizarpedido           controllers.GuiaRapidoController.onPostCustomizar()
+GET     /resumopedido               controllers.GuiaRapidoController.indexResumo()
+POST    /resumopedido               controllers.GuiaRapidoController.onPostResumo()
 
 
 # Links abaixo não são do Conforta-me

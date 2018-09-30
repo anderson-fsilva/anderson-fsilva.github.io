@@ -1,12 +1,21 @@
 @(pacotes: List[Pacote])
 @main("Lista de Pacotes") {
 	<h1>Todos os Pacotes disponiveis</h1>
-	<form method="GET" action="/infopacote" >
+	<br>
+	<form method="GET" action="/customizarpedido" >
 		<ul>
 		@for(pacote <- pacotes) {
-			<li><input type="radio" name="nome_pacote" value="@pacote.nome">	@pacote.nome </li>
+			<li>
+				<input type="radio" name="nome_pacote" value="@pacote.getNome()">	@pacote.getNome() 
+				<p>@pacote.getDescricao()</p>
+				<br>
+			</li>
 		}
 		</ul>
 		<input type="submit" value="Escolher Pacote">
+	</form>
+	<br>
+	<form metho="GET" action="/guiarapido">
+		<input type="submit" value="Voltar">
 	</form>
 }

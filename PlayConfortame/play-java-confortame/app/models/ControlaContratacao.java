@@ -15,5 +15,9 @@ public class ControlaContratacao {
         return this.cadastroPacote.obterPacotesAbaixoDoPreco(valor);
     }
 
+    public Pacote obterDetalhesPacote(String nomePacote) {
+        return this.cadastroPacote.obterPacotePeloNome(nomePacote);
+    }
+
 
 }
