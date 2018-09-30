@@ -10,6 +10,9 @@ public class CadastroPacote {
     CadastroPacote() {
         preencherPacotes();
     }
+    
+    
+    //cadastro de pacotes disponiveis
 
     public void preencherPacotes() {
         this.pacotes.add(new Pacote("Simples", 1,false,900.00));
@@ -17,6 +20,7 @@ public class CadastroPacote {
         this.pacotes.add(new Pacote("Avancado",1,true,5000.0));
     }
 
+    //obter pacotes abaixo do valor informado
     public ArrayList<Pacote> obterPacotesAbaixoDoPreco(Double valor) {
         ArrayList<Pacote> pacotesAbaixoDoPreco = new ArrayList<>();
 
@@ -27,6 +31,7 @@ public class CadastroPacote {
         return pacotesAbaixoDoPreco;
     }
 
+    //retorna pacote selecionado pelo nome
     public Pacote obterPacotePeloNome(String nomePacote) {
         Pacote pacoteSelecionado = null;
 
