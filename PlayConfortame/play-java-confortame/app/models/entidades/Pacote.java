@@ -20,15 +20,22 @@ public class Pacote {
 
    
 
-    public Pacote(String nome, int urnas, int coroaFlores, Boolean buffet, Double valorPacote, String descricao) {
+    public Pacote(String nome, int urnas, int coroaFlores, Boolean buffet, Double valorPacote, String descricao, Boolean transmissaoWeb,
+                    Boolean transladoNacional, Boolean TransladoInternacional, String outros) {
+        
         this.nome = nome;
         this.buffet = buffet;
         this.urnas = urnas;
         this.coroaFlores = coroaFlores;
         this.valorPacote = valorPacote;
         this.descricao = descricao;
+        this.transmissaoWeb = transmissaoWeb;
+        this.transladoNacional = transladoNacional;
+        this.transladoInternacional = transladoInternacional;
+        this.outros = outros;
     }
 
+   
     public String getNome(){
         return this.nome;
     }

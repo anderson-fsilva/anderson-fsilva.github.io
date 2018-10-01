@@ -40,16 +40,21 @@ public class Fachada {
         
         ArrayList<String> itensDoPacote = new ArrayList<String>();
 
+
         if(pacoteDetalhes.getUrnas() > 0) {
             itensDoPacote.add("Urnas");
         }
         if(pacoteDetalhes.getCoroaFlores() > 0) {
             itensDoPacote.add("CoroaFlores");
         }
+
         if(pacoteDetalhes.getBuffet() == true) {
             itensDoPacote.add("Buffet");
         }
-    
+        if(pacoteDetalhes.getTransmissaoWeb() == true) {
+            itensDoPacote.add("TransmissaoWeb");
+        }            
+        
         
         return itensDoPacote;
     }

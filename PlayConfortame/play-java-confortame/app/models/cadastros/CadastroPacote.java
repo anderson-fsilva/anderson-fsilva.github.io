@@ -19,9 +19,12 @@ public class CadastroPacote {
     //cadastro de pacotes disponiveis
 
     public void preencherPacotes() {
-        this.pacotes.add(new Pacote("Simples", 1, 1,false,900.00,"Este pacote eh composto por uma urna e uma coroa de flores"));
-        this.pacotes.add(new Pacote("Intermediario", 1, 2,false,1500.0,"Este pacote eh composto por uma urna de melhor qualidade e duas coroas de flores"));
-        this.pacotes.add(new Pacote("Avancado", 2, 2,true,5000.0,"Este pacote eh composto por uma urna para cremacao, uma urna para as cinzas, duas coroas de flores e buffet"));
+        this.pacotes.add(new Pacote("Simples", 1, 1,false,900.00,"Este pacote permite a escolha de uma urna e uma coroa de flores.",
+                        false, true, false, ""));
+        this.pacotes.add(new Pacote("Intermediario", 1, 2,true,1500.0,"Este pacote permite a escolha de até duas urnas, duas coroa de flores, buffete e translado internacional",
+                        false, true, true, ""));
+        this.pacotes.add(new Pacote("Avancado", 2, 2,true,5000.0,"Este pacote permite a escolha de até três urnas, podendo ser urna para cremacao e/ou urna para as cinzas, transmissão web, translado internacional, três coroas de flores e buffet", 
+                        true, true, true, ""));
     }
 
     //obter pacotes abaixo do valor informado
