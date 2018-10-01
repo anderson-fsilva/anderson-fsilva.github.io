@@ -36,7 +36,6 @@ public class GuiaRapidoController extends Controller{
         this.localizacaoDestino = requestData.get("localizacaoDestino");
         this.valorDesejadoString = requestData.get("valorDesejado");
       
-
         return redirect(routes.PacotesAcessiveisController.exibirPacotesAcessiveis( this.valorDesejadoString, this.localizacaoOrigem, this.localizacaoDestino));
     }
  

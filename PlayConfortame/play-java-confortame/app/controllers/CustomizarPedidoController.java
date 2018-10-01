@@ -52,7 +52,6 @@ public class CustomizarPedidoController extends Controller {
 
         // Pecorrendo a lista que contém os itens do pacote escolhido.
         for(String item : this.itensDoPacote) {
-                 
             valoresInformados.add(requestData.get(item));  // Para cada item, será obtido o valor informado pelo usuário          
         }
 

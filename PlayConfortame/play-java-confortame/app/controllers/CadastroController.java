@@ -20,7 +20,6 @@ public class CadastroController extends Controller {
 		this.usuario = new Usuario();
     }
 
-    
     public Result index() {
         Form<Usuario> usuarioForm = formFactory.form(Usuario.class);
         return ok(views.html.cadastro.render(usuarioForm));

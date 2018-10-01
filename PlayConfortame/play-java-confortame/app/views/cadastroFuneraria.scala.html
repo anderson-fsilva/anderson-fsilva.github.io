@@ -1,0 +1,16 @@
+@(funerariaForm: Form[entidades.Funeraria])
+
+@main("Cadastro Funeraria | Conforta-me") {
+  <h1>Cadastro da Funeraria</h1>
+    @helper.form(action = routes.CadastroFunerariaController.onPost()){
+            @helper.inputText(funerariaForm("nome"))
+            @helper.inputText(funerariaForm("cnpj"))
+            @helper.inputText(funerariaForm("telefone"))
+            @helper.inputText(funerariaForm("endereco"))
+            @helper.inputText(funerariaForm("cep"))
+            @helper.inputText(funerariaForm("estado"))
+            @helper.inputText(funerariaForm("cidade"))
+            @helper.inputText(funerariaForm("email"))
+        <input type="Submit" class="btn primary">
+    }
+}

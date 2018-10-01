@@ -2,14 +2,10 @@ package models.entidades;
 
 import java.util.*;
 
-
-
-
 public class Cliente {
 
     private String nome;
     private static ArrayList<Cliente> clientes = new ArrayList();
-
 
     public Cliente () {
         //

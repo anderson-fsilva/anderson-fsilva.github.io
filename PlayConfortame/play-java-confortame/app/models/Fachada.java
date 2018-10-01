@@ -2,18 +2,19 @@ package models;
 
 import java.util.*;
 
-import models.controladores.ControlaContratacao;
-import models.entidades.Pacote;
+import models.controladores.*;
+import models.entidades.*;
 
 
 public class Fachada { 
-
     private static Fachada fachadaSingleton = null;
     private ControlaContratacao controlaContratacao;
+    private ControlaCadastroFuneraria controlaCadastroFuneraria;
 
 
     private Fachada() {
         this.controlaContratacao = new ControlaContratacao();
+        this.controlaCadastroFuneraria = new ControlaCadastroFuneraria();
     }
 
     public static Fachada obterInstancia() {
@@ -23,13 +24,19 @@ public class Fachada {
         return fachadaSingleton;
     }
 
-
-
     public ArrayList<Pacote> exibirPacotesAcessiveis(Double valor) {
        return this.controlaContratacao.obterPacotesAcessiveis(valor);
     }
 
+    public Boolean cadastrarFuneraria(Funeraria funeraria){
+        Boolean success = true;
+        success = this.controlaCadastroFuneraria.cadastrarFuneraria(funeraria);
+        return success;
+    }
 
+    public void cadastrarServicosFuneraria(String cnpj, Boolean cremacao, Boolean sepultamento, Boolean coroaDeFlores){
+        this.controlaCadastroFuneraria.cadastrarServicos(cnpj,cremacao,sepultamento,coroaDeFlores);
+    }
 
     public ArrayList<String> exibirDetalhesPacote(String nomePacote) {
         Pacote pacoteDetalhes = this.controlaContratacao.obterDetalhesPacote(nomePacote);
@@ -39,7 +46,6 @@ public class Fachada {
                             "Valor medio do pacote: " + pacoteDetalhes.valorPacote + '\n';*/
         
         ArrayList<String> itensDoPacote = new ArrayList<String>();
-
 
         if(pacoteDetalhes.getUrnas() > 0) {
             itensDoPacote.add("Urnas");
@@ -54,7 +60,6 @@ public class Fachada {
         if(pacoteDetalhes.getTransmissaoWeb() == true) {
             itensDoPacote.add("TransmissaoWeb");
         }            
-        
         
         return itensDoPacote;
     }

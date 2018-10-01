@@ -17,7 +17,6 @@ public class CadastroPacote {
     
     
     //cadastro de pacotes disponiveis
-
     public void preencherPacotes() {
         this.pacotes.add(new Pacote("Simples", 1, 1,false,900.00,"Este pacote permite a escolha de uma urna e uma coroa de flores.",
                         false, true, false, ""));
@@ -39,7 +38,6 @@ public class CadastroPacote {
     }
 
     //retorna pacote selecionado pelo nome
-
     public Pacote obterPacotePeloNome(String nomePacote) {
         Pacote pacoteSelecionado = null;
 
