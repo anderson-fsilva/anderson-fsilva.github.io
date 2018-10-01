@@ -1,8 +1,14 @@
+/*
+    Controller para inicio do guia rápido, serão informados as localizações e o valor desejado que o usuário quer pagar.
+*/
+
+
 package controllers;
 
 import play.mvc.*;
 import java.util.*;
-import models.*;
+import models.entidades.Pacote;
+import models.Fachada;
 import views.html.*;
 import play.data.*;
 import javax.inject.*;
@@ -29,45 +35,11 @@ public class GuiaRapidoController extends Controller{
         this.localizacaoOrigem = requestData.get("localizacaoOrigem");
         this.localizacaoDestino = requestData.get("localizacaoDestino");
         this.valorDesejadoString = requestData.get("valorDesejado");
-        Double valorDesejado = Double.valueOf(valorDesejadoString);
+      
 
-        return this.exibirPacotesAcessiveis(valorDesejado);
+        return redirect(routes.PacotesAcessiveisController.exibirPacotesAcessiveis( this.valorDesejadoString, this.localizacaoOrigem, this.localizacaoDestino));
     }
+ 
 
-    public Result obterInfoPacote(String nomePacote) {
-        return ok(this.fachada.exibirDetalhesPacote(nomePacote));
-    }
-
-    public Result exibirPacotesAcessiveis(Double valor) {
-        this.listaPacotes = this.fachada.exibirPacotesAcessiveis(valor);
-		return ok(list.render(listaPacotes));
-    }
-
-    public Result indexCustomizar(String nome_pacote) {
-        return ok(views.html.customizarPedido.render());
-    }
-
-    public Result onPostCustomizar() {
-        DynamicForm requestData = formFactory.form().bindFromRequest();
-        
-        this.opcaoUrna = requestData.get("opcaoUrna");
-        this.opcaoCoroa = requestData.get("opcaoCoroa");
-
-        return indexResumo();
-    }
-
-    public Result indexResumo() {
-        ArrayList<String> resumo = new ArrayList<>();
-        resumo.add("Localizacao origem: "+this.localizacaoOrigem);
-        resumo.add("Localizacao destino: "+this.localizacaoDestino);
-        resumo.add("Valor desejado: "+this.valorDesejadoString);
-        resumo.add("Opcao de urna: "+this.opcaoUrna);
-        resumo.add("Opcao de coroa de flores: "+this.opcaoCoroa);
-        return ok(resumoPedido.render(resumo));
-    }
-
-    public Result onPostResumo(){
-        return ok("Seu pedido foi realizado. Aguarde o envio das propostas das funerarias.");
-    }
 
 }

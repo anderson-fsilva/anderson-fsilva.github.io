@@ -1,6 +1,9 @@
-package models;
+package models.entidades;
 
 import java.util.*;
+
+
+
 
 public class Pacote {
 
@@ -15,11 +18,9 @@ public class Pacote {
     public Double valorPacote;
     public String descricao;
 
-    Pacote() {
-        //
-    }
+   
 
-    Pacote(String nome, int urnas, int coroaFlores, Boolean buffet, Double valorPacote, String descricao) {
+    public Pacote(String nome, int urnas, int coroaFlores, Boolean buffet, Double valorPacote, String descricao) {
         this.nome = nome;
         this.buffet = buffet;
         this.urnas = urnas;
@@ -59,11 +60,11 @@ public class Pacote {
         return this.descricao;
     }
 
-    Double obterPreco() {
+    public Double obterPreco() {
         return this.valorPacote;
     }
 
-    String obterNome() {
+    public String obterNome() {
         return this.nome;
     }
 

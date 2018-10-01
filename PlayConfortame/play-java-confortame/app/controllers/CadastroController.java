@@ -3,6 +3,7 @@ package controllers;
 import play.mvc.*;
 import java.util.*;
 import models.*;
+import models.entidades.Usuario;
 import views.html.*;
 import play.data.*;
 import javax.inject.*;

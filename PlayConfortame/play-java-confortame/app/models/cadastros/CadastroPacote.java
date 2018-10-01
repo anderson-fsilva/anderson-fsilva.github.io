@@ -1,13 +1,17 @@
-package models;
+package models.cadastros;
 
 import java.util.*;
+
+import models.entidades.Pacote;
+
+
 
 
 public class CadastroPacote { 
 
     public ArrayList<Pacote> pacotes = new ArrayList<>();
 
-    CadastroPacote() {
+    public CadastroPacote() {
         preencherPacotes();
     }
     
@@ -31,22 +35,14 @@ public class CadastroPacote {
         return pacotesAbaixoDoPreco;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-=======
     //retorna pacote selecionado pelo nome
->>>>>>> a31ad70f6e1cc6029a895cbc1d4bc92515d0f57a
-=======
-    //retorna pacote selecionado pelo nome
->>>>>>> a31ad70f6e1cc6029a895cbc1d4bc92515d0f57a
+
     public Pacote obterPacotePeloNome(String nomePacote) {
         Pacote pacoteSelecionado = null;
 
         for (Pacote pacote : this.pacotes) {
             if (pacote.obterNome().equals(nomePacote))
-                pacoteSelecionado = pacote;
+                pacoteSelecionado = pacote; 
         }
 
         return pacoteSelecionado;

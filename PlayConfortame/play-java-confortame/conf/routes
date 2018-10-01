@@ -10,12 +10,15 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /cadastro                   controllers.CadastroController.index()
 POST    /cadastro                   controllers.CadastroController.save()
+GET     /selecaoguia                controllers.SelecaoGuiaController.index()
 GET     /guiarapido                 controllers.GuiaRapidoController.index()
 POST    /guiarapido                 controllers.GuiaRapidoController.onPost()
-GET     /customizarpedido           controllers.GuiaRapidoController.indexCustomizar(nome_pacote: String)
-POST    /customizarpedido           controllers.GuiaRapidoController.onPostCustomizar()
-GET     /resumopedido               controllers.GuiaRapidoController.indexResumo()
-POST    /resumopedido               controllers.GuiaRapidoController.onPostResumo()
+GET     /pacotesacessiveis          controllers.PacotesAcessiveisController.exibirPacotesAcessiveis(valor: String, locOrigem: String, locDestino: String)
+POST    /pacotesacessiveis          controllers.PacotesAcessiveisController.customizarPacote()
+GET     /customizarpedido           controllers.CustomizarPedidoController.indexCustomizar(nome_pacote: String, locOrigem: String, locDestino: String, valorDesejado: String)
+POST    /customizarpedido           controllers.CustomizarPedidoController.onPostCustomizar()
+GET     /resumopedido               controllers.ResumoPedidoController.indexResumo(locOrigem: String, locDestino: String, valorDesejado: String)
+POST    /resumopedido               controllers.ResumoPedidoController.onPostResumo()
 
 
 # Links abaixo não são do Conforta-me

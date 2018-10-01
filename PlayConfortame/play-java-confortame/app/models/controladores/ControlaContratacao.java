@@ -1,6 +1,9 @@
-package models;
+package models.controladores;
 
 import java.util.*;
+
+import models.cadastros.CadastroPacote;
+import models.entidades.Pacote;
 
 
 public class ControlaContratacao { 

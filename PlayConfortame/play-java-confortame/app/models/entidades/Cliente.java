@@ -1,6 +1,9 @@
-package models;
+package models.entidades;
 
 import java.util.*;
+
+
+
 
 public class Cliente {
 
