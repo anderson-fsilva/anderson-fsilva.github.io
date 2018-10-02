@@ -2,8 +2,19 @@ package models.entidades;
 
 import java.util.*;
 
-public class Funeraria {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+// import javax.persistence.ManyToOne;
+
+import play.data.validation.Constraints.Required;
+import play.db.ebean.Model;
+
+@Entity
+public class Funeraria extends Model {
     
+    @Id
+    public long id;
+
     //Dados 
     public String nome;
     public String cnpj;
@@ -21,6 +32,10 @@ public class Funeraria {
     
     public Funeraria() {
         //
+    }
+
+    public long getId() {
+        return id;
     }
 
 }

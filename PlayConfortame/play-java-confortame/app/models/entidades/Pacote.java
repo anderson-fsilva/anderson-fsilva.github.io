@@ -2,11 +2,20 @@ package models.entidades;
 
 import java.util.*;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+// import javax.persistence.ManyToOne;
 
+import play.data.validation.Constraints.Required;
+import play.db.ebean.Model;
 
+@Entity
+public class Pacote extends Model {
 
-public class Pacote {
+    @Id
+    public long id;
 
+    @Required
     public String nome;
     public int urnas;
     public int coroaFlores;
@@ -20,9 +29,10 @@ public class Pacote {
 
    
 
-    public Pacote(String nome, int urnas, int coroaFlores, Boolean buffet, Double valorPacote, String descricao, Boolean transmissaoWeb,
-                    Boolean transladoNacional, Boolean TransladoInternacional, String outros) {
+    public Pacote(long id, String nome, int urnas, int coroaFlores, Boolean buffet, Double valorPacote, String descricao, Boolean transmissaoWeb,
+                    Boolean transladoNacional, Boolean transladoInternacional, String outros) {
         
+        this.id = id;
         this.nome = nome;
         this.buffet = buffet;
         this.urnas = urnas;
@@ -35,7 +45,10 @@ public class Pacote {
         this.outros = outros;
     }
 
-   
+    public long getId() {
+        return id;
+    }
+
     public String getNome(){
         return this.nome;
     }
