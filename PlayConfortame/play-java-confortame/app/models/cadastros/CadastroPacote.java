@@ -13,7 +13,7 @@ public class CadastroPacote {
     private FabricaInterface repBDR;
     private IRepositorioPacote repPacote;
 
-    public ArrayList<Pacote> pacotes = new ArrayList<>();
+    //public ArrayList<Pacote> pacotes = new ArrayList<>();
 
     public CadastroPacote() {
         repBDR = new FabricaRepositorioBDR();
@@ -46,12 +46,12 @@ public class CadastroPacote {
     
     //cadastro de pacotes disponiveis
     public void preencherPacotes() {
-        this.pacotes.add(new Pacote(1,"Simples", 1, 1,false,900.00,"Este pacote permite a escolha de uma urna e uma coroa de flores.",
+        /*this.pacotes.add(new Pacote(1,"Simples", 1, 1,false,900.00,"Este pacote permite a escolha de uma urna e uma coroa de flores.",
                         false, true, false, ""));
         this.pacotes.add(new Pacote(2,"Intermediario", 1, 2,true,1500.0,"Este pacote permite a escolha de até duas urnas, duas coroa de flores, buffete e translado internacional",
                         false, true, true, ""));
         this.pacotes.add(new Pacote(3,"Avancado", 2, 2,true,5000.0,"Este pacote permite a escolha de até três urnas, podendo ser urna para cremacao e/ou urna para as cinzas, transmissão web, translado internacional, três coroas de flores e buffet", 
-                        true, true, true, ""));
+                        true, true, true, ""));*/
 
         atualizarPacote(new Pacote(1,"Simples", 1, 1,false,900.00,"Este pacote permite a escolha de uma urna e uma coroa de flores.",
                         false, true, false, ""));
