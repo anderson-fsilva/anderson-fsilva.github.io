@@ -3,21 +3,21 @@ package models.repositorios.funeraria;
 import java.util.List;
 
 import models.entidades.Funeraria;
-import play.db.ebean.Model.Finder;
+import io.ebean.*;
 
 public class RepositorioFunerariaBDR implements IRepositorioFuneraria{
 	
 	public Finder<Long, Funeraria> funerariaFinder;
 	
 	public RepositorioFunerariaBDR(){
-		funerariaFinder = new Finder<Long, Funeraria>(Long.class, Funeraria.class);
+		funerariaFinder = new Finder<Long, Funeraria>(Funeraria.class);
 	}
 	
 	public List<Funeraria> all(){
 		return funerariaFinder.all();
 	}
 	
-	public Agencia findId(long id){
+	public Funeraria findId(long id){
 		return funerariaFinder.byId(id);
 	}
 	

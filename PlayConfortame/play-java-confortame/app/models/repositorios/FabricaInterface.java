@@ -1,13 +1,13 @@
 package models.repositorios;
 
 import java.util.List;
-import models.repositorios.pacote.RepositorioPacote;
-import models.repositorios.funeraria.RepositorioFuneraria;
+import models.repositorios.pacote.IRepositorioPacote;
+import models.repositorios.funeraria.IRepositorioFuneraria;
 
 public interface FabricaInterface {
 		
-		public RepositorioPacote makeRepPacote();
+		public IRepositorioPacote makeRepPacote();
 
-    	public RepositorioFuneraria makeRepFuneraria();
+    	public IRepositorioFuneraria makeRepFuneraria();
 		
 }

@@ -1,17 +1,17 @@
 package models.repositorios;
 
-import models.repositorios.pacote.RepositorioPacote;
-import models.repositorios.funeraria.RepositorioFuneraria;
+import models.repositorios.pacote.IRepositorioPacote;
+import models.repositorios.funeraria.IRepositorioFuneraria;
 import models.repositorios.pacote.RepositorioPacoteBDR;
 import models.repositorios.funeraria.RepositorioFunerariaBDR;
 
-class FabricaRepositorioBDR implements FabricaInterface {
+public class FabricaRepositorioBDR implements FabricaInterface {
     
-    public RepositorioPacote makeRepPacote(){
+    public IRepositorioPacote makeRepPacote(){
         return new RepositorioPacoteBDR();
     }
     
-    public RepositorioFuneraria makeRepFuneraria(){
+    public IRepositorioFuneraria makeRepFuneraria(){
         return new RepositorioFunerariaBDR();
     }
     

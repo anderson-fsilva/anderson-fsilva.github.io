@@ -7,7 +7,7 @@ import javax.persistence.Id;
 // import javax.persistence.ManyToOne;
 
 import play.data.validation.Constraints.Required;
-import play.db.ebean.Model;
+import io.ebean.*;
 
 @Entity
 public class Pacote extends Model {
