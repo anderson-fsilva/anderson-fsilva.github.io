@@ -15,7 +15,14 @@ public class ControlaContratacao {
     }
 
     public ArrayList<Pacote> obterPacotesAcessiveis(Double valor) {
-        return this.cadastroPacote.obterPacotesAbaixoDoPreco(valor);
+        ArrayList<Pacote> pacotesAbaixoDoPreco = new ArrayList<>();
+
+        List<Pacote> todosPacotes = cadastroPacote.recuperarPacotes();
+        for (Pacote pacote : todosPacotes) {
+            if (pacote.getValorPacote() <= valor) pacotesAbaixoDoPreco.add(pacote);
+        }
+
+        return pacotesAbaixoDoPreco;
     }
 
     public Pacote obterDetalhesPacote(String nomePacote) {

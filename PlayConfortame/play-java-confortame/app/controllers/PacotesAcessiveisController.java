@@ -1,10 +1,6 @@
 /*
     Nesse controller, o usuário escolherá um dos pacotes disponíveis para a customização no próximo passo.
-
 */
-
-
-
 package controllers;
 
 import play.mvc.*;
@@ -16,10 +12,7 @@ import play.data.*;
 import javax.inject.*;
 import play.Logger;
 
-
-
 public class PacotesAcessiveisController extends Controller {
-
     private FormFactory formFactory;
     private Fachada fachada;
     private ArrayList<Pacote> listaPacotes;
@@ -31,29 +24,19 @@ public class PacotesAcessiveisController extends Controller {
         this.formFactory = formFactory;
     }
 
-    
-
-
-    public Result exibirPacotesAcessiveis(String valor, String locOrigem, String locDestino) {
+    public Result exibirPacotesAcessiveis(String valor) {
         this.fachada = Fachada.obterInstancia();
-        this.locOrigem = locOrigem;
-        this.locDestino = locDestino;
         this.valorDesejado = valor;
 
-        //Logger.debug("Acessando valor do pacote: " + valor);
         this.listaPacotes = this.fachada.exibirPacotesAcessiveis(Double.valueOf(valor));
 		return ok(list.render(listaPacotes));
     }
-
-
-
 
     public Result customizarPacote() {
         DynamicForm requestData = formFactory.form().bindFromRequest();
 
         this.nome_pacote = requestData.get("nome_pacote");
-        //Logger.debug("Acessando valor do pacote: " + nome_pacote);
-        return redirect(routes.CustomizarPedidoController.indexCustomizar(nome_pacote, this.locOrigem, this.locDestino, this.valorDesejado));
+
+        return redirect(routes.CustomizarPedidoController.indexCustomizar(nome_pacote, this.valorDesejado));
     }
-    
 }

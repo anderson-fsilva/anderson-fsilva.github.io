@@ -29,10 +29,8 @@ public class Pacote extends Model {
 
    
 
-    public Pacote(long id, String nome, int urnas, int coroaFlores, Boolean buffet, Double valorPacote, String descricao, Boolean transmissaoWeb,
+    public Pacote(String nome, int urnas, int coroaFlores, Boolean buffet, Double valorPacote, String descricao, Boolean transmissaoWeb,
                     Boolean transladoNacional, Boolean transladoInternacional, String outros) {
-        
-        this.id = id;
         this.nome = nome;
         this.buffet = buffet;
         this.urnas = urnas;

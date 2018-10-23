@@ -12,13 +12,11 @@ import play.Logger;
 
 
 public class CustomizarPedidoController extends Controller {
-
     private FormFactory formFactory;
     private String opcaoUrna, opcaoCoroa;
-    private String locOrigem, locDestino, valorDesejado;
+    private String valorDesejado;
     private ArrayList<String> itensDoPacote;
     private Fachada fachada;
-
 
     @Inject
     public CustomizarPedidoController(FormFactory formFactory) {
@@ -26,25 +24,16 @@ public class CustomizarPedidoController extends Controller {
         this.fachada = Fachada.obterInstancia();
     }
 
-
-
-    public Result indexCustomizar(String nome_pacote, String locOrigem, String locDestino, String valorDesejado) {
-        this.locDestino = locDestino;
-        this.locOrigem = locOrigem;
+    public Result indexCustomizar(String nome_pacote, String valorDesejado) {
         this.valorDesejado = valorDesejado;
-        
-        Fachada fachada = Fachada.obterInstancia();
+        this.fachada = Fachada.obterInstancia();
 
         // Objeto para armazenar todos os itens presentes no pacote escolhido. Isso será utilizado para disponibilizar as 
         // opções na tela de customização dos pacotes.
         this.itensDoPacote = fachada.exibirDetalhesPacote(nome_pacote);
 
-    
         return ok(views.html.customizarPedido.render(nome_pacote, itensDoPacote));
     }
-
-
-
 
     public Result onPostCustomizar() {
         DynamicForm requestData = formFactory.form().bindFromRequest(); // Necessário para pegarmos os campos informados pelo usuário.
@@ -59,8 +48,7 @@ public class CustomizarPedidoController extends Controller {
         fachada.setItensPacote(this.itensDoPacote);
         fachada.setValoresInformados(valoresInformados);
         
-
-        return redirect(routes.ResumoPedidoController.indexResumo(this.locOrigem, this.locDestino, this.valorDesejado));
+        return redirect(routes.ResumoPedidoController.indexResumo(this.valorDesejado));
     }
     
 
