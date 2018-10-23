@@ -12,7 +12,7 @@ public class CadastroPacote {
     private FabricaInterface repBDR;
     private IRepositorioPacote repPacote;
 
-    public CadastroPacote(FabricaInterface repBDR) {
+    public CadastroPacote() {
         repBDR = new FabricaRepositorioBDR();
         repPacote = repBDR.makeRepPacote();
         preencherPacotes();
