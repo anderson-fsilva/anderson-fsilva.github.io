@@ -5,7 +5,6 @@ import java.util.*;
 import models.entidades.Funeraria;
 
 public class CadastroFuneraria { 
-
     private ArrayList<Funeraria> funerarias = new ArrayList<>();
 
     public CadastroFuneraria() {

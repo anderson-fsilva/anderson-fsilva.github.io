@@ -4,14 +4,13 @@ import java.util.*;
 
 import models.cadastros.CadastroPacote;
 import models.entidades.Pacote;
-
+import models.repositorios.*;
 
 public class ControlaContratacao { 
-
     private CadastroPacote cadastroPacote;
 
-    public ControlaContratacao() {
-        this.cadastroPacote = new CadastroPacote();
+    public ControlaContratacao(FabricaInterface fabrica) {
+        this.cadastroPacote = new CadastroPacote(fabrica);
     }
 
     public ArrayList<Pacote> obterPacotesAcessiveis(Double valor) {

@@ -4,16 +4,18 @@ import java.util.*;
 
 import models.controladores.*;
 import models.entidades.*;
+import models.repositorios.*;
 
 
 public class Fachada { 
     private static Fachada fachadaSingleton = null;
     private ControlaContratacao controlaContratacao;
     private ControlaCadastroFuneraria controlaCadastroFuneraria;
-
+    private FabricaInterface fabrica;
 
     private Fachada() {
-        this.controlaContratacao = new ControlaContratacao();
+        this.fabrica = new FabricaRepositorioBDR();
+        this.controlaContratacao = new ControlaContratacao(fabrica);
         this.controlaCadastroFuneraria = new ControlaCadastroFuneraria();
     }
 

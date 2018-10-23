@@ -9,12 +9,10 @@ import models.repositorios.pacote.IRepositorioPacote;
 import models.repositorios.pacote.RepositorioPacoteBDR;
 
 public class CadastroPacote { 
-    private FabricaInterface repBDR;
     private IRepositorioPacote repPacote;
 
-    public CadastroPacote() {
-        repBDR = new FabricaRepositorioBDR();
-        repPacote = repBDR.makeRepPacote();
+    public CadastroPacote(FabricaInterface fabrica) {
+        repPacote = fabrica.makeRepPacote();
         preencherPacotes();
     }
 
