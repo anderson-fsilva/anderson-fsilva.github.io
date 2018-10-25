@@ -16,7 +16,7 @@ public class Fachada {
     private Fachada() {
         this.fabrica = new FabricaRepositorioBDR();
         this.controlaContratacao = new ControlaContratacao(fabrica);
-        this.controlaCadastroFuneraria = new ControlaCadastroFuneraria();
+        this.controlaCadastroFuneraria = new ControlaCadastroFuneraria(fabrica);
     }
 
     public static Fachada obterInstancia() {
@@ -28,6 +28,10 @@ public class Fachada {
 
     public ArrayList<Pacote> exibirPacotesAcessiveis(Double valor) {
        return this.controlaContratacao.obterPacotesAcessiveis(valor);
+    }
+
+    public Pacote obterPacote(String nomePacote) {
+        return this.controlaContratacao.obterPacote(nomePacote);
     }
 
     public Boolean cadastrarFuneraria(Funeraria funeraria){
@@ -77,6 +81,10 @@ public class Fachada {
     }
     public ArrayList<String> getValoresInformados() {
         return this.valoresInformados;
+    }
+
+    public void armazenarPedido(Pedido pedido) {
+        this.controlaContratacao.armazenarPedido(pedido);
     }
 
 

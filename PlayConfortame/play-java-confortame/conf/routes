@@ -28,5 +28,5 @@ POST    /pacotesacessiveis          controllers.PacotesAcessiveisController.cust
 GET     /customizarpedido           controllers.CustomizarPedidoController.indexCustomizar(nome_pacote: String, valorDesejado: String)
 POST    /customizarpedido           controllers.CustomizarPedidoController.onPostCustomizar()
 
-GET     /resumopedido               controllers.ResumoPedidoController.indexResumo(valorDesejado: String)
+GET     /resumopedido               controllers.ResumoPedidoController.indexResumo(valorDesejado: String, nomePacote: String)
 POST    /resumopedido               controllers.ResumoPedidoController.onPostResumo()

@@ -3,6 +3,12 @@
 
 # --- !Ups
 
+create table cliente (
+  id                            bigint auto_increment not null,
+  nome                          varchar(255),
+  constraint pk_cliente primary key (id)
+);
+
 create table funeraria (
   id                            bigint auto_increment not null,
   nome                          varchar(255),
@@ -36,6 +42,7 @@ create table pacote (
 
 create table pedido (
   id                            bigint auto_increment not null,
+  id_cliente                    integer not null,
   orcamento                     double,
   localizacao_origem            varchar(255),
   localizacao_destino           varchar(255),
@@ -47,6 +54,8 @@ create table pedido (
 
 
 # --- !Downs
+
+drop table if exists cliente;
 
 drop table if exists funeraria;
 
