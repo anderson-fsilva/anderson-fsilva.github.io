@@ -9,13 +9,10 @@ import models.repositorios.pedido.IRepositorioPedido;
 import models.repositorios.pedido.RepositorioPedidoBDR;
 
 public class CadastroPedido{
-	
-	private FabricaInterface repBDR;
     private IRepositorioPedido repPedido;
 
-    public CadastroPedido() {
-        repBDR = new FabricaRepositorioBDR();
-        repPedido = repBDR.makeRepPedido();
+    public CadastroPedido(FabricaInterface fabrica) {
+        repPedido = fabrica.makeRepPedido();
     }
 
     //atualizar pedido

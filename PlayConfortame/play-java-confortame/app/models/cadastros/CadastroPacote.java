@@ -9,15 +9,10 @@ import models.repositorios.pacote.IRepositorioPacote;
 import models.repositorios.pacote.RepositorioPacoteBDR;
 
 public class CadastroPacote { 
-
-    private FabricaInterface repBDR;
     private IRepositorioPacote repPacote;
 
-    //public ArrayList<Pacote> pacotes = new ArrayList<>();
-
-    public CadastroPacote() {
-        repBDR = new FabricaRepositorioBDR();
-        repPacote = repBDR.makeRepPacote();
+    public CadastroPacote(FabricaInterface fabrica) {
+        repPacote = fabrica.makeRepPacote();
         preencherPacotes();
     }
 
@@ -43,34 +38,21 @@ public class CadastroPacote {
         return repPacote.all();
     }
     
-    
     //cadastro de pacotes disponiveis
     public void preencherPacotes() {
-        /*this.pacotes.add(new Pacote(1,"Simples", 1, 1,false,900.00,"Este pacote permite a escolha de uma urna e uma coroa de flores.",
-                        false, true, false, ""));
-        this.pacotes.add(new Pacote(2,"Intermediario", 1, 2,true,1500.0,"Este pacote permite a escolha de até duas urnas, duas coroa de flores, buffete e translado internacional",
-                        false, true, true, ""));
-        this.pacotes.add(new Pacote(3,"Avancado", 2, 2,true,5000.0,"Este pacote permite a escolha de até três urnas, podendo ser urna para cremacao e/ou urna para as cinzas, transmissão web, translado internacional, três coroas de flores e buffet", 
-                        true, true, true, ""));*/
-
-        atualizarPacote(new Pacote(1,"Simples", 1, 1,false,900.00,"Este pacote permite a escolha de uma urna e uma coroa de flores.",
-                        false, true, false, ""));
-        atualizarPacote(new Pacote(2,"Intermediario", 1, 2,true,1500.0,"Este pacote permite a escolha de até duas urnas, duas coroa de flores, buffete e translado internacional",
-                        false, true, true, ""));
-        atualizarPacote(new Pacote(3,"Avancado", 2, 2,true,5000.0,"Este pacote permite a escolha de até três urnas, podendo ser urna para cremacao e/ou urna para as cinzas, transmissão web, translado internacional, três coroas de flores e buffet", 
-                        true, true, true, ""));
-    }
-
-    //obter pacotes abaixo do valor informado
-    public ArrayList<Pacote> obterPacotesAbaixoDoPreco(Double valor) {
-        ArrayList<Pacote> pacotesAbaixoDoPreco = new ArrayList<>();
-
-        List<Pacote> todosPacotes = recuperarPacotes();
-        for (Pacote pacote : todosPacotes) {
-            if (pacote.getValorPacote() <= valor) pacotesAbaixoDoPreco.add(pacote);
+        //Remover pacotes pré-existentes (Evita erros)
+        List<Pacote> pacotes = this.recuperarPacotes();
+        for (Pacote pacote : pacotes) {
+            this.removerPacote(pacote.id);
         }
 
-        return pacotesAbaixoDoPreco;
+        //Adicionar pacotes basicos
+        atualizarPacote(new Pacote("Simples", 1, 1,false,900.00,"Este pacote permite a escolha de uma urna e uma coroa de flores.",
+                        false, true, false, ""));
+        atualizarPacote(new Pacote("Intermediario", 1, 2,true,1500.0,"Este pacote permite a escolha de até duas urnas, duas coroa de flores, buffete e translado internacional",
+                        false, true, true, ""));
+        atualizarPacote(new Pacote("Avancado", 2, 2,true,5000.0,"Este pacote permite a escolha de até três urnas, podendo ser urna para cremacao e/ou urna para as cinzas, transmissão web, translado internacional, três coroas de flores e buffet", 
+                        true, true, true, ""));
     }
 
     //retorna pacote selecionado pelo nome

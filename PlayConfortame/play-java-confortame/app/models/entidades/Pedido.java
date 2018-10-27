@@ -1,5 +1,6 @@
 package models.entidades;
 
+
 import java.util.*;
 
 import javax.persistence.Entity;
@@ -14,8 +15,7 @@ public class Pedido extends Model {
 	@Id
     public long id;
 
-    @Required
-    public Usuario usuario;
+    public int idCliente;
     public Pacote pacote;
     public Double orcamento;
     public String localizacaoOrigem;

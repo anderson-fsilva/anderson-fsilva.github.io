@@ -2,11 +2,22 @@ package models.entidades;
 
 import java.util.*;
 
-public class Cliente {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+// import javax.persistence.ManyToOne;
 
-    private String nome;
-    private static ArrayList<Cliente> clientes = new ArrayList();
+import play.data.validation.Constraints.Required;
+import io.ebean.*;
 
+@Entity
+public class Cliente extends Model {
+
+    @Id
+    public long id;
+
+    //Dados
+    public String nome;
+    
     public Cliente () {
         //
     }
@@ -15,16 +26,8 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public void addCliente(Cliente cliente) {
-       Cliente.clientes.add(cliente);
-    }
-
     public String getNome() {
         return this.nome;
-    }
-
-    public ArrayList<Cliente> getAllClientes() {
-        return this.clientes;
     }
 
 }

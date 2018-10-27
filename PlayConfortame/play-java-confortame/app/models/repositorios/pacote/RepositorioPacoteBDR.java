@@ -6,7 +6,6 @@ import models.entidades.Pacote;
 import io.ebean.*;
 
 public class RepositorioPacoteBDR implements IRepositorioPacote{
-	
 	public Finder<Long, Pacote> pacoteFinder;
 	
 	public RepositorioPacoteBDR(){
@@ -28,6 +27,5 @@ public class RepositorioPacoteBDR implements IRepositorioPacote{
 	public void delete(long  id){
 		pacoteFinder.ref(id).delete();
 	}
-
 
 }

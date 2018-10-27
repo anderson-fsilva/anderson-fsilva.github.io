@@ -4,17 +4,19 @@ import java.util.*;
 
 import models.controladores.*;
 import models.entidades.*;
+import models.repositorios.*;
 
 
 public class Fachada { 
     private static Fachada fachadaSingleton = null;
     private ControlaContratacao controlaContratacao;
     private ControlaCadastroFuneraria controlaCadastroFuneraria;
-
+    private FabricaInterface fabrica;
 
     private Fachada() {
-        this.controlaContratacao = new ControlaContratacao();
-        this.controlaCadastroFuneraria = new ControlaCadastroFuneraria();
+        this.fabrica = new FabricaRepositorioBDR();
+        this.controlaContratacao = new ControlaContratacao(fabrica);
+        this.controlaCadastroFuneraria = new ControlaCadastroFuneraria(fabrica);
     }
 
     public static Fachada obterInstancia() {
@@ -26,6 +28,10 @@ public class Fachada {
 
     public ArrayList<Pacote> exibirPacotesAcessiveis(Double valor) {
        return this.controlaContratacao.obterPacotesAcessiveis(valor);
+    }
+
+    public Pacote obterPacote(String nomePacote) {
+        return this.controlaContratacao.obterPacote(nomePacote);
     }
 
     public Boolean cadastrarFuneraria(Funeraria funeraria){
@@ -40,10 +46,6 @@ public class Fachada {
 
     public ArrayList<String> exibirDetalhesPacote(String nomePacote) {
         Pacote pacoteDetalhes = this.controlaContratacao.obterDetalhesPacote(nomePacote);
-        /*String pacoteDt = "Pacote " + nomePacote + '\n' + 
-                            "Buffet: " + String.valueOf(pacoteDetalhes.buffet) + '\n' +
-                            "Urnas: " + pacoteDetalhes.urnas + '\n' +
-                            "Valor medio do pacote: " + pacoteDetalhes.valorPacote + '\n';*/
         
         ArrayList<String> itensDoPacote = new ArrayList<String>();
 
@@ -79,6 +81,10 @@ public class Fachada {
     }
     public ArrayList<String> getValoresInformados() {
         return this.valoresInformados;
+    }
+
+    public void armazenarPedido(Pedido pedido) {
+        this.controlaContratacao.armazenarPedido(pedido);
     }
 
 

@@ -22,11 +22,11 @@ GET     /selecaoguia                controllers.SelecaoGuiaController.index()
 GET     /guiarapido                 controllers.GuiaRapidoController.index()
 POST    /guiarapido                 controllers.GuiaRapidoController.onPost()
 
-GET     /pacotesacessiveis          controllers.PacotesAcessiveisController.exibirPacotesAcessiveis(valor: String, locOrigem: String, locDestino: String)
+GET     /pacotesacessiveis          controllers.PacotesAcessiveisController.exibirPacotesAcessiveis(valor: String)
 POST    /pacotesacessiveis          controllers.PacotesAcessiveisController.customizarPacote()
 
-GET     /customizarpedido           controllers.CustomizarPedidoController.indexCustomizar(nome_pacote: String, locOrigem: String, locDestino: String, valorDesejado: String)
+GET     /customizarpedido           controllers.CustomizarPedidoController.indexCustomizar(nome_pacote: String, valorDesejado: String)
 POST    /customizarpedido           controllers.CustomizarPedidoController.onPostCustomizar()
 
-GET     /resumopedido               controllers.ResumoPedidoController.indexResumo(locOrigem: String, locDestino: String, valorDesejado: String)
+GET     /resumopedido               controllers.ResumoPedidoController.indexResumo(valorDesejado: String, nomePacote: String)
 POST    /resumopedido               controllers.ResumoPedidoController.onPostResumo()

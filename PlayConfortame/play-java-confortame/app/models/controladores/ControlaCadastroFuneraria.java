@@ -4,13 +4,14 @@ import java.util.*;
 
 import models.cadastros.CadastroFuneraria;
 import models.entidades.Funeraria;
+import models.repositorios.*;
 
 
 public class ControlaCadastroFuneraria { 
     private CadastroFuneraria cadastroFuneraria;
 
-    public ControlaCadastroFuneraria() {
-        this.cadastroFuneraria = new CadastroFuneraria();
+    public ControlaCadastroFuneraria(FabricaInterface fabrica) {
+        this.cadastroFuneraria = new CadastroFuneraria(fabrica);
     }
 
     public Boolean cadastrarFuneraria(Funeraria funeraria) {
@@ -34,7 +35,7 @@ public class ControlaCadastroFuneraria {
 
     public Boolean checaCnpjUnico(Funeraria funeraria){
         Boolean cnpjUnico = true;
-        ArrayList<Funeraria> listaFunerarias = this.cadastroFuneraria.obterListaFunerarias();
+        List<Funeraria> listaFunerarias = this.cadastroFuneraria.obterListaFunerarias();
 
         for (Funeraria fun : listaFunerarias){
             if (fun.cnpj.equals(funeraria.cnpj))
