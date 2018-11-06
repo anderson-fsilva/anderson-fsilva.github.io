@@ -8,7 +8,6 @@ import views.html.*;
 import play.data.*;
 import javax.inject.*;
 
-
 public class CadastroServicosController extends Controller {
     private FormFactory formFactory;
     private Fachada fachada;
