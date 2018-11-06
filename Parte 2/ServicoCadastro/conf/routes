@@ -8,9 +8,6 @@ GET     /                           controllers.HomeController.index
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-GET     /cadastro                   controllers.CadastroController.index()
-POST    /cadastro                   controllers.CadastroController.save()
-
 GET     /acessoFuneraria            controllers.AcessoFunerariaController.index()
 
 GET     /cadastroFuneraria          controllers.CadastroFunerariaController.index()
