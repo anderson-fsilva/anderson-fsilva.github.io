@@ -1,0 +1,22 @@
+@(resumo: List[String])
+@main("Resumo") {
+	<h1>Resumo do pedido</h1>
+	<br>
+	<form method="POST" action="/resumopedido" >
+		<ul>
+			<li>Localização origem:<br><input type="text" name="locOrigem"></li><br>
+			<li>Localização destino:<br> <input type="text" name="locDestino"></li>
+			
+		@for(item <- resumo) {
+			<li> 
+				<p>@item</p>
+			</li>
+		}
+		</ul>
+		<input type="submit" value="Confirmar">
+	</form>
+	<br>
+	<form method="POST" action="/guiarapido">
+		<input type="submit" value="Voltar">
+	</form>
+}
