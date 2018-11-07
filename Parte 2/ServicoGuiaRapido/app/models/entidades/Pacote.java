@@ -4,7 +4,6 @@ import java.util.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-// import javax.persistence.ManyToOne;
 
 import play.data.validation.Constraints.Required;
 import io.ebean.*;
@@ -15,7 +14,6 @@ public class Pacote extends Model {
     @Id
     public long id;
 
-    @Required
     public String nome;
     public int urnas;
     public int coroaFlores;
@@ -27,7 +25,9 @@ public class Pacote extends Model {
     public Double valorPacote;
     public String descricao;
 
-   
+    public Pacote() {
+        //
+    }
 
     public Pacote(String nome, int urnas, int coroaFlores, Boolean buffet, Double valorPacote, String descricao, Boolean transmissaoWeb,
                     Boolean transladoNacional, Boolean transladoInternacional, String outros) {
@@ -85,8 +85,5 @@ public class Pacote extends Model {
     public String obterNome() {
         return this.nome;
     }
-
-   
-
-
+    
 }
