@@ -1,0 +1,29 @@
+@main("Cadastro Pacote | Conforta-me") {
+<div class="content">
+    <h1 class="bold-text">Conforta.me</h1>
+    <h2 class="green-text bold-text">Seja Bem-Vinda ao Conforta.me</h2>
+
+    <p class="bigger-font gray-text bold-text">Cadastre um Pacote</p>
+
+    <form action="/cadastroPacote" method="POST">
+        <li class="choice-column">
+            <div>
+                <label for="name">Nome do Pacote:</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div>
+                <label for="value">Valor do Pacote:</label>
+                <input type="text" name="value" id="value">
+            </div>
+
+            <div class="choice-column">
+                <label for="description">Descrição:</label>
+                <textarea name="description" id="description" rows="8" cols="12"></textarea>
+            </div>
+        </li>
+
+        <button class="green-button" type="submit">Finalizar Cadastro</button>
+    </form>
+</div>
+}

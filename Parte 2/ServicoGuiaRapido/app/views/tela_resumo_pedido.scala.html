@@ -1,0 +1,33 @@
+@(resumo: List[String])
+@main("Resumo Pedido | Conforta.me") {
+    <div class="content">
+        <h1 class="bold-text">Conforta.me</h1>
+        <h2 class="green-text bold-text">Resumo do Pedido</h2>
+
+        <div class="choice-column">
+            <form method="POST" action="/resumopedido" id="form">
+                <ul>
+                    <li class="choice-row">
+                        <p class="gray-text bold-text bigger-font">Localização Origem</p>
+                        <input type="text" name="locOrigem">
+                    </li>
+                    <li class="choice-row">
+                        <p class="gray-text bold-text bigger-font">Localização Destino</p>
+                        <input type="text" name="locDestino">
+                    </li>
+                </ul>                  
+            </form>
+                
+            <ul>
+                @for(item <- resumo) {
+                    <li><p class="gray-text bold-text bigger-font">@item</p></li>
+                }
+            </ul>
+        </div>
+
+        <div class="cadastro-row-form">
+            <a href="/guiarapido"><button type="button" class="green-button button-self-center">Voltar</button></a>
+            <button form="form" class="green-button button-self-center">Enviar Pedido</button>
+        </div>
+    </div>
+}

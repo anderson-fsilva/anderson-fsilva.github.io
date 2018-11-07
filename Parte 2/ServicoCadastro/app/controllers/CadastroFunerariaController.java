@@ -10,13 +10,11 @@ import javax.inject.*;
 
 public class CadastroFunerariaController extends Controller {
     private FormFactory formFactory;
-    private Funeraria funeraria;
     private Fachada fachada;
 
     @Inject
     public CadastroFunerariaController(FormFactory formFactory) {
         this.formFactory = formFactory;
-        this.funeraria = new Funeraria();
         this.fachada = Fachada.obterInstancia();
     }
 
@@ -42,8 +40,8 @@ public class CadastroFunerariaController extends Controller {
         cadastroSucedido = this.fachada.cadastrarFuneraria(funeraria);
 
         if (!cadastroSucedido) {
-            String mensagemSucesso = "CNPJ Invalido, por favor recomece o cadastro.";
-            return ok(views.html.tela_mensagem.render(mensagemSucesso));
+            String mensagemErro = "CNPJ Invalido, por favor recomece o cadastro.";
+            return ok(views.html.tela_mensagem.render(mensagemErro));
         }
 
         return redirect(routes.CadastroServicosController.index(funeraria.cnpj));
