@@ -9,22 +9,6 @@ create table cliente (
   constraint pk_cliente primary key (id)
 );
 
-create table funeraria (
-  id                            bigint auto_increment not null,
-  nome                          varchar(255),
-  cnpj                          varchar(255),
-  telefone                      varchar(255),
-  endereco                      varchar(255),
-  cep                           varchar(255),
-  estado                        varchar(255),
-  cidade                        varchar(255),
-  email                         varchar(255),
-  cremacao                      boolean,
-  sepultamento                  boolean,
-  coroa_de_flores               boolean,
-  constraint pk_funeraria primary key (id)
-);
-
 create table pacote (
   id                            bigint auto_increment not null,
   nome                          varchar(255),
@@ -56,8 +40,6 @@ create table pedido (
 # --- !Downs
 
 drop table if exists cliente;
-
-drop table if exists funeraria;
 
 drop table if exists pacote;
 

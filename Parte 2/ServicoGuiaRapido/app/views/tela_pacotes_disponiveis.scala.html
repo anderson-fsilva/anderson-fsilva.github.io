@@ -1,0 +1,20 @@
+@(pacotes: List[entidades.Pacote]) 
+@main("Lista de Pacotes | Conforta.me") {
+<div class="content">
+    <h1 class="bold-text">Conforta.me</h1>
+    <h2 class="green-text bold-text">Pacotes Disponíveis</h2>
+
+    <form method="POST" action="#">
+        <ul>
+            @for(pacote <- pacotes) {
+            <li>
+                <input type="radio" name="nome_pacote" value="@pacote.getNome()"> @pacote.getNome()
+                <p>@pacote.getDescricao()</p>
+            </li>
+            }
+            <a href="/guiarapido"><button class="green-button" type="button">Voltar</button></a>
+            <button class="green-button" type="submit">Escolher Pacote</button>
+        </ul>
+
+</div>
+}

@@ -1,7 +1,6 @@
 /*
  * Copyright (C) 2009-2017 Lightbend Inc. <https://www.lightbend.com>
  */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;}
 table{border-collapse:collapse;border-spacing:0;}
 caption,th,td{text-align:left;font-weight:normal;}
 form legend{display:none;}
@@ -125,3 +124,146 @@ form dl{padding:10px 0;}
 dd.info{color:#888;font-size:12px;}
 dd.error{color:#c00;}
 aside a[href^="http"]:after,.doc a[href^="http"]:after{content:url(/assets/images/external.png);vertical-align:middle;margin-left:5px;}
+
+
+html {
+    font-family: Roboto;
+}
+
+
+h1 {
+    font-size: 3em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.green-text {
+    color: #00AB9C;
+}
+
+.gray-text {
+    color: #828282;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.bigger-font {
+   font-size: 1.2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #828282;
+    text-decoration: none;
+}
+
+.green-button {
+    color: white;
+    background-color: #00AB9C;
+    padding:  5px 40px;
+    border-radius: 25px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type=text], input[type=password] {
+    margin: 10px 0;
+    border-radius: 30px;
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+button {
+    margin: 20px;
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cadastro-servicos-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.cadastro-servicos-row-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+label {
+    color: #828282;
+    font-weight: bold;
+}
+
+.cadastro-row-form { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cadastro-row-reverse-form { 
+    min-width: 200px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.cadastro-column-form {
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-self-center {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.choice-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.choice-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-row {
+    min-width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+.pacote-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+}

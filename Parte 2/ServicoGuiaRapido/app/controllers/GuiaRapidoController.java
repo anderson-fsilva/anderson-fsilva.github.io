@@ -24,13 +24,12 @@ public class GuiaRapidoController extends Controller{
     }
 
     public Result index() {
-        return ok(views.html.guiarapido.render());
+        return ok(views.html.tela_guia_rapido.render());
     }
 
     public Result onPost() {
         DynamicForm requestData = formFactory.form().bindFromRequest();
-        this.valorDesejadoString = requestData.get("valorDesejado");
-      
+        this.valorDesejadoString = requestData.get("value");
         return redirect(routes.PacotesAcessiveisController.exibirPacotesAcessiveis(this.valorDesejadoString));
     }
  

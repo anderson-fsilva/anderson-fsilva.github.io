@@ -11,6 +11,7 @@ import views.html.*;
 import play.data.*;
 import javax.inject.*;
 import play.Logger;
+import play.libs.Json;
 
 public class PacotesAcessiveisController extends Controller {
     private FormFactory formFactory;
@@ -22,14 +23,13 @@ public class PacotesAcessiveisController extends Controller {
     @Inject
     public PacotesAcessiveisController (FormFactory formFactory) {
         this.formFactory = formFactory;
+        this.fachada = Fachada.obterInstancia();
     }
 
     public Result exibirPacotesAcessiveis(String valor) {
-        this.fachada = Fachada.obterInstancia();
         this.valorDesejado = valor;
-
         this.listaPacotes = this.fachada.exibirPacotesAcessiveis(Double.valueOf(valor));
-		return ok(list.render(listaPacotes));
+		return ok(views.html.tela_pacotes_disponiveis.render(listaPacotes));
     }
 
     public Result customizarPacote() {

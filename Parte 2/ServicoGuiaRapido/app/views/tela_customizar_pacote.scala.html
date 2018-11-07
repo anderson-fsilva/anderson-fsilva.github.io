@@ -1,0 +1,25 @@
+@(nome_pacote: String, itensDoPacote: List[String]) @main("Guia Rapido | Conforta-me") {
+<div class="content">
+    <h1 class="bold-text">Conforta.me</h1>
+    <h2 class="green-text bold-text">Customizar Pacote</h2>
+
+    <p class="bigger-font gray-text bold-text">Quais itens você deseja manter no seu pedido?</p>
+    <form method="POST" action="#">
+        <ul class="choice-column">
+            @for(item <- itensDoPacote) {
+                <li>
+                    <div class="pacote-form">
+                        <label for="@item">@item</label>
+                        <input type="text" name="@item" id="@item">
+                    </div>
+                </li>
+                }
+                <input type="hidden" value=@(nome_pacote) name="nome_pacote">
+        </ul>
+
+        <div class="choice-row">
+            <a href="/guiarapido"><button type="button" class="green-button button-self-center">Voltar</button></a>
+            <button class="green-button button-self-center">Avançar</button>
+        </div>
+</div>
+}

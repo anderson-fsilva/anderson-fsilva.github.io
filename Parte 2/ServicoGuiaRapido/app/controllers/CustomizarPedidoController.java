@@ -32,7 +32,7 @@ public class CustomizarPedidoController extends Controller {
         // opções na tela de customização dos pacotes.
         this.itensDoPacote = fachada.exibirDetalhesPacote(nome_pacote);
 
-        return ok(views.html.customizarPedido.render(nome_pacote, itensDoPacote));
+        return ok(views.html.tela_customizar_pacote.render(nome_pacote, itensDoPacote));
     }
 
     public Result onPostCustomizar() {

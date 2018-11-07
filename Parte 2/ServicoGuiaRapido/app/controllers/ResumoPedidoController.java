@@ -38,7 +38,7 @@ public class ResumoPedidoController extends Controller {
             resumo.add(itensDoPacote.get(i) + ": " + valoresInformadosPeloUsuario.get(i));
         }
 
-        return ok(resumoPedido.render(resumo));
+        return ok(views.html.tela_resumo_pedido.render(resumo));
     }
 
     public Result onPostResumo(){
@@ -59,6 +59,7 @@ public class ResumoPedidoController extends Controller {
 
         this.fachada.armazenarPedido(novoPedido);
     
-        return ok("Seu pedido foi realizado. Aguarde o envio das propostas das funerarias.");
+        String mensagem = "Seu pedido foi realizado. Aguarde o envio das propostas das funerarias.";
+        return ok(views.html.tela_mensagem.render(mensagem));
     }
 }
