@@ -40,7 +40,7 @@ public class PacotesAcessiveisController extends Controller implements WSBodyRea
     public CompletionStage<Result> exibirPacotesAcessiveis(String valor) {
         this.valorDesejado = valor;
 
-        return ws.url("http://localhost:9000/pacoteJson")
+        return ws.url("http://servicocadastro:9000/pacoteJson")
                   .addQueryParameter("valor", this.valorDesejado).get()
                   .thenApply(response -> {
             jsonTest3 = response.getBody();
